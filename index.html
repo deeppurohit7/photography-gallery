@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lumina Studio - Editorial & Fine Art Photography Exhibition by Deep Purohit">
+  <title>Lumina Studio | Fine Art Visuals & Print Archive</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body id="top">
+
+  <!-- Floating Minimalist Header -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="#top" class="brand">LUMINA<span>//03</span></a>
+      <nav class="nav">
+        <a href="#gallery" class="nav-link">Archives</a>
+        <a href="#retouch" class="nav-link">Lab Comparison</a>
+        <a href="#print-studio" class="nav-link">Print Studio</a>
+        <a href="#contact" class="nav-btn">Acquire Print</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section with Camera Viewfinder HUD -->
+    <section class="hero-section">
+      <div class="hud-container">
+        <!-- Viewfinder UI Elements -->
+        <div class="hud-overlay">
+          <!-- Top Telemetry -->
+          <div class="hud-top">
+            <span class="hud-rec"><span class="rec-dot"></span> LIVE SENSOR</span>
+            <span class="hud-mono">3:2 FORMAT • 61.0 MP</span>
+            <span class="hud-badge">MANUAL MODE</span>
+          </div>
+
+          <!-- Rule of Thirds Gridlines -->
+          <div class="hud-grid-lines">
+            <div class="line-h line-h1"></div>
+            <div class="line-h line-h2"></div>
+            <div class="line-v line-v1"></div>
+            <div class="line-v line-v2"></div>
+          </div>
+
+          <!-- Central Crosshair Focus Bracket -->
+          <div class="hud-crosshair">
+            <div class="bracket-tl"></div>
+            <div class="bracket-tr"></div>
+            <div class="bracket-bl"></div>
+            <div class="bracket-br"></div>
+            <span class="focus-lock">AF-LOCK [98%]</span>
+          </div>
+
+          <!-- Bottom Camera Technical Readout -->
+          <div class="hud-bottom">
+            <div class="telemetry-item">
+              <span class="hud-label">SHUTTER</span>
+              <span class="hud-val">1/2500s</span>
+            </div>
+            <div class="telemetry-item">
+              <span class="hud-label">APERTURE</span>
+              <span class="hud-val">f/1.4</span>
+            </div>
+            <div class="telemetry-item">
+              <span class="hud-label">ISO SPEED</span>
+              <span class="hud-val">ISO 64</span>
+            </div>
+            <div class="telemetry-item">
+              <span class="hud-label">OPTIC</span>
+              <span class="hud-val">50mm F1.2 GM</span>
+            </div>
+            <div class="telemetry-item">
+              <span class="hud-label">EXPOSURE</span>
+              <span class="hud-val">+0.0 EV</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Background Hero Image -->
+        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=1600&auto=format&fit=crop&q=85" alt="Brutalist Concrete Pavilion" class="hero-bg-img">
+
+        <!-- Floating Hero Headline -->
+        <div class="hero-text-card">
+          <span class="caption-tag">EXHIBITION 2026</span>
+          <h1 class="hero-title">The Geometry of Solitude</h1>
+          <p class="hero-desc">Documenting modern architecture, harsh shadows, and natural human stillness across Western India and beyond.</p>
+          <a href="#gallery" class="btn-scroll">Explore Archives ↓</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive RAW vs Color-Graded Comparison Section -->
+    <section id="retouch" class="section retouch-section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="tag">Darkroom Precision</span>
+          <h2 class="title">RAW vs. Color Grade</h2>
+          <p class="subtitle">Drag the interactive slider horizontally to inspect the transition from flat uncompressed sensor data to final fine-art grade.</p>
+        </div>
+
+        <!-- Pure Interactive Slider using CSS variable update -->
+        <div class="comparison-card">
+          <div class="comparison-slider" style="--pos: 50%;">
+            <!-- Image 1: Color Graded (After) -->
+            <img class="img-after" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1400&auto=format&fit=crop&q=90" alt="Graded Alpine Sunset">
+            
+            <!-- Image 2: Flat RAW Simulation (Before) -->
+            <img class="img-before" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1400&auto=format&fit=crop&q=90" alt="Unprocessed RAW File">
+
+            <!-- Divider Bar -->
+            <div class="slider-divider">
+              <div class="slider-button">
+                <span>◀ ▶</span>
+              </div>
+            </div>
+
+            <!-- Native Range Input (Updates CSS --pos custom property on input) -->
+            <input type="range" min="0" max="100" value="50" class="slider-handle" aria-label="Slide to compare raw and graded photograph" oninput="this.parentElement.style.setProperty('--pos', this.value + '%')">
+
+            <!-- Badges -->
+            <span class="badge-label label-before">RAW [UNGRADED]</span>
+            <span class="badge-label label-after">FINAL FINE-ART MASTER</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Asymmetric Editorial Masonry Gallery -->
+    <section id="gallery" class="section gallery-section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="tag">Curated Portfolio</span>
+          <h2 class="title">Visual Archives</h2>
+          <p class="subtitle">Selected works captured across architectural explorations and landscape expeditions.</p>
+        </div>
+
+        <!-- Filter Toggle Tabs -->
+        <div class="filter-container">
+          <input type="radio" name="collection" id="cat-all" checked>
+          <input type="radio" name="collection" id="cat-architecture">
+          <input type="radio" name="collection" id="cat-nature">
+          <input type="radio" name="collection" id="cat-portraits">
+
+          <div class="filter-bar">
+            <label for="cat-all" class="filter-tab">All Works [06]</label>
+            <label for="cat-architecture" class="filter-tab">Architecture [02]</label>
+            <label for="cat-nature" class="filter-tab">Nature & Wild [02]</label>
+            <label for="cat-portraits" class="filter-tab">Portraits [02]</label>
+          </div>
+
+          <!-- Editorial Asymmetric Grid -->
+          <div class="masonry-grid">
+
+            <!-- Item 1: Tall Feature (Architecture) -->
+            <article class="masonry-item tall item-arch">
+              <a href="#photo-modal-1" class="photo-card" aria-label="Open Concrete Geometry in high resolution">
+                <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=1000&auto=format&fit=crop&q=80" alt="Brutalist Pavilion" loading="lazy">
+                <div class="photo-info">
+                  <div class="info-top">
+                    <span class="info-index">01 / ARCH</span>
+                    <span class="info-lens">50mm F1.4 • ISO 100</span>
+                  </div>
+                  <h3 class="info-title">Brutalist Symmetry</h3>
+                  <span class="info-cta">Click to Inspect EXIF +</span>
+                </div>
+              </a>
+            </article>
+
+            <!-- Item 2: Wide Feature (Nature) -->
+            <article class="masonry-item wide item-nature">
+              <a href="#photo-modal-2" class="photo-card" aria-label="Open Alpine Solitude in high resolution">
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80" alt="Alpine Reflection" loading="lazy">
+                <div class="photo-info">
+                  <div class="info-top">
+                    <span class="info-index">02 / NATURE</span>
+                    <span class="info-lens">24mm F8.0 • 1/125s</span>
+                  </div>
+                  <h3 class="info-title">Alpine Solitude</h3>
+                  <span class="info-cta">Click to Inspect EXIF +</span>
+                </div>
+              </a>
+            </article>
+
+            <!-- Item 3: Standard Card (Portraits) -->
+            <article class="masonry-item item-portrait">
+              <a href="#photo-modal-3" class="photo-card" aria-label="Open Amber Reverie in high resolution">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=1000&auto=format&fit=crop&q=80" alt="Chiaroscuro Portrait" loading="lazy">
+                <div class="photo-info">
+                  <div class="info-top">
+                    <span class="info-index">03 / PORTRAIT</span>
+                    <span class="info-lens">85mm F1.4 • ISO 64</span>
+                  </div>
+                  <h3 class="info-title">Amber Reverie</h3>
+                  <span class="info-cta">Click to Inspect EXIF +</span>
+                </div>
+              </a>
+            </article>
+
+            <!-- Item 4: Standard Card (Architecture) -->
+            <article class="masonry-item item-arch">
+              <a href="#photo-modal-4" class="photo-card" aria-label="Open Monolith Skyward in high resolution">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1000&auto=format&fit=crop&q=80" alt="Skyscraper Perspective" loading="lazy">
+                <div class="photo-info">
+                  <div class="info-top">
+                    <span class="info-index">04 / ARCH</span>
+                    <span class="info-lens">35mm F5.6 • 1/800s</span>
+                  </div>
+                  <h3 class="info-title">Monolith Skyward</h3>
+                  <span class="info-cta">Click to Inspect EXIF +</span>
+                </div>
+              </a>
+            </article>
+
+            <!-- Item 5: Wide Feature (Nature) -->
+            <article class="masonry-item wide item-nature">
+              <a href="#photo-modal-5" class="photo-card" aria-label="Open Highland Mist in high resolution">
+                <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1000&auto=format&fit=crop&q=80" alt="Morning Fog Over Mountain Ridge" loading="lazy">
+                <div class="photo-info">
+                  <div class="info-top">
+                    <span class="info-index">05 / NATURE</span>
+                    <span class="info-lens">70mm F4.0 • ISO 400</span>
+                  </div>
+                  <h3 class="info-title">Highland Mist</h3>
+                  <span class="info-cta">Click to Inspect EXIF +</span>
+                </div>
+              </a>
+            </article>
+
+            <!-- Item 6: Standard Card (Portraits) -->
+            <article class="masonry-item item-portrait">
+              <a href="#photo-modal-6" class="photo-card" aria-label="Open The Sculptor in high resolution">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1000&auto=format&fit=crop&q=80" alt="Environmental Artisan Portrait" loading="lazy">
+                <div class="photo-info">
+                  <div class="info-top">
+                    <span class="info-index">06 / PORTRAIT</span>
+                    <span class="info-lens">50mm F1.8 • ISO 160</span>
+                  </div>
+                  <h3 class="info-title">The Sculptor</h3>
+                  <span class="info-cta">Click to Inspect EXIF +</span>
+                </div>
+              </a>
+            </article>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Fine-Art Print Studio Configurator -->
+    <section id="print-studio" class="section studio-config-section">
+      <div class="container">
+        <div class="config-box">
+          <div class="config-summary">
+            <span class="tag">Studio Experience</span>
+            <h2 class="title">Fine-Art Print Customizer</h2>
+            <p>Every piece is printed using archival pigment inks on 310gsm museum-grade cotton rag paper, inspected and hand-signed by Deep Purohit.</p>
+            <div class="assurance-list">
+              <div>✓ 100-Year Lightfast Color Guarantee</div>
+              <div>✓ Signed & Numbered Holographic Certificate</div>
+              <div>✓ Custom Wooden Crating & Global Insured Courier</div>
+            </div>
+          </div>
+
+          <div class="config-form">
+            <!-- Dimension Selector -->
+            <div class="form-block">
+              <label class="form-title">1. Select Print Dimension</label>
+              <div class="option-chips">
+                <label class="chip">
+                  <input type="radio" name="size" value="medium" checked>
+                  <span><strong>Gallery A3</strong> (29.7 × 42 cm)</span>
+                </label>
+                <label class="chip">
+                  <input type="radio" name="size" value="large">
+                  <span><strong>Exhibition A2</strong> (42 × 59.4 cm)</span>
+                </label>
+                <label class="chip">
+                  <input type="radio" name="size" value="monolith">
+                  <span><strong>Monolith Grand</strong> (70 × 100 cm)</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Frame Material Selector -->
+            <div class="form-block">
+              <label class="form-title">2. Choose Custom Framing</label>
+              <div class="frame-selector">
+                <label class="frame-option">
+                  <input type="radio" name="frame" value="ash" checked>
+                  <span class="frame-preview frame-black"></span>
+                  <span class="frame-text">Matte Carbon Ash</span>
+                </label>
+                <label class="frame-option">
+                  <input type="radio" name="frame" value="oak">
+                  <span class="frame-preview frame-oak"></span>
+                  <span class="frame-text">Natural Raw Oak</span>
+                </label>
+                <label class="frame-option">
+                  <input type="radio" name="frame" value="brass">
+                  <span class="frame-preview frame-brass"></span>
+                  <span class="frame-text">Brushed Studio Brass</span>
+                </label>
+              </div>
+            </div>
+
+            <a href="mailto:dpurohit4040@gmail.com?subject=Print%20Inquiry%20-%20Lumina%20Studio" class="btn-order">Request Allocation Quote →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =======================================================================
+       FULL-SCREEN DARKROOM LIGHTBOX MODALS (Triggered via CSS :target)
+       ======================================================================= -->
+
+  <!-- Modal 1 -->
+  <aside id="photo-modal-1" class="lightbox-view">
+    <a href="#gallery" class="lightbox-shade" aria-label="Close photo"></a>
+    <div class="lightbox-body">
+      <a href="#gallery" class="lightbox-close" aria-label="Close">&times;</a>
+      <div class="lightbox-content-grid">
+        <div class="lightbox-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=1400&auto=format&fit=crop&q=95" alt="Brutalist Pavilion">
+        </div>
+        <div class="lightbox-meta-panel">
+          <span class="meta-tag">PLATE 01 / 06</span>
+          <h3 class="meta-title">Brutalist Symmetry</h3>
+          <p class="meta-story">Examines the intersection of heavy raw concrete and midday harsh solar illumination. Captured on location in Berlin.</p>
+          <div class="exif-sheet">
+            <div class="exif-row"><span>CAMERA:</span> <strong>Sony A7R V (Full Frame)</strong></div>
+            <div class="exif-row"><span>LENS:</span> <strong>FE 50mm F1.2 G-Master</strong></div>
+            <div class="exif-row"><span>EXPOSURE:</span> <strong>1/2500s at f/1.4</strong></div>
+            <div class="exif-row"><span>SENSITIVITY:</span> <strong>ISO 100</strong></div>
+            <div class="exif-row"><span>PRINT EDITION:</span> <strong>Limited to 15 Copies</strong></div>
+          </div>
+          <a href="#print-studio" class="modal-cta">Order Custom Print</a>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Modal 2 -->
+  <aside id="photo-modal-2" class="lightbox-view">
+    <a href="#gallery" class="lightbox-shade" aria-label="Close photo"></a>
+    <div class="lightbox-body">
+      <a href="#gallery" class="lightbox-close" aria-label="Close">&times;</a>
+      <div class="lightbox-content-grid">
+        <div class="lightbox-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1400&auto=format&fit=crop&q=95" alt="Alpine Reflection">
+        </div>
+        <div class="lightbox-meta-panel">
+          <span class="meta-tag">PLATE 02 / 06</span>
+          <h3 class="meta-title">Alpine Solitude</h3>
+          <p class="meta-story">Dawn exposure capturing the still mirror waters and cold mountain silhouettes during autumn thaw.</p>
+          <div class="exif-sheet">
+            <div class="exif-row"><span>CAMERA:</span> <strong>Hasselblad X2D 100C</strong></div>
+            <div class="exif-row"><span>LENS:</span> <strong>XCD 28mm F4.0 P</strong></div>
+            <div class="exif-row"><span>EXPOSURE:</span> <strong>1/125s at f/8.0</strong></div>
+            <div class="exif-row"><span>SENSITIVITY:</span> <strong>ISO 200</strong></div>
+            <div class="exif-row"><span>PRINT EDITION:</span> <strong>Limited to 10 Copies</strong></div>
+          </div>
+          <a href="#print-studio" class="modal-cta">Order Custom Print</a>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Modal 3 -->
+  <aside id="photo-modal-3" class="lightbox-view">
+    <a href="#gallery" class="lightbox-shade" aria-label="Close photo"></a>
+    <div class="lightbox-body">
+      <a href="#gallery" class="lightbox-close" aria-label="Close">&times;</a>
+      <div class="lightbox-content-grid">
+        <div class="lightbox-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=1400&auto=format&fit=crop&q=95" alt="Chiaroscuro Portrait">
+        </div>
+        <div class="lightbox-meta-panel">
+          <span class="meta-tag">PLATE 03 / 06</span>
+          <h3 class="meta-title">Amber Reverie</h3>
+          <p class="meta-story">Exploring emotional resonance using soft single-source window diffused chiaroscuro lighting.</p>
+          <div class="exif-sheet">
+            <div class="exif-row"><span>CAMERA:</span> <strong>Leica SL2</strong></div>
+            <div class="exif-row"><span>LENS:</span> <strong>Summilux-SL 85mm F1.4</strong></div>
+            <div class="exif-row"><span>EXPOSURE:</span> <strong>1/250s at f/1.4</strong></div>
+            <div class="exif-row"><span>SENSITIVITY:</span> <strong>ISO 64</strong></div>
+            <div class="exif-row"><span>PRINT EDITION:</span> <strong>Limited to 25 Copies</strong></div>
+          </div>
+          <a href="#print-studio" class="modal-cta">Order Custom Print</a>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Modal 4 -->
+  <aside id="photo-modal-4" class="lightbox-view">
+    <a href="#gallery" class="lightbox-shade" aria-label="Close photo"></a>
+    <div class="lightbox-body">
+      <a href="#gallery" class="lightbox-close" aria-label="Close">&times;</a>
+      <div class="lightbox-content-grid">
+        <div class="lightbox-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1400&auto=format&fit=crop&q=95" alt="Skyscraper Perspective">
+        </div>
+        <div class="lightbox-meta-panel">
+          <span class="meta-tag">PLATE 04 / 06</span>
+          <h3 class="meta-title">Monolith Skyward</h3>
+          <p class="meta-story">Vertical convergence of steel, engineered glass, and cloud formations in downtown Singapore.</p>
+          <div class="exif-sheet">
+            <div class="exif-row"><span>CAMERA:</span> <strong>Sony A7R V</strong></div>
+            <div class="exif-row"><span>LENS:</span> <strong>FE 35mm F1.4 GM</strong></div>
+            <div class="exif-row"><span>EXPOSURE:</span> <strong>1/800s at f/5.6</strong></div>
+            <div class="exif-row"><span>SENSITIVITY:</span> <strong>ISO 100</strong></div>
+            <div class="exif-row"><span>PRINT EDITION:</span> <strong>Limited to 20 Copies</strong></div>
+          </div>
+          <a href="#print-studio" class="modal-cta">Order Custom Print</a>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Modal 5 -->
+  <aside id="photo-modal-5" class="lightbox-view">
+    <a href="#gallery" class="lightbox-shade" aria-label="Close photo"></a>
+    <div class="lightbox-body">
+      <a href="#gallery" class="lightbox-close" aria-label="Close">&times;</a>
+      <div class="lightbox-content-grid">
+        <div class="lightbox-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1400&auto=format&fit=crop&q=95" alt="Mountain Fog">
+        </div>
+        <div class="lightbox-meta-panel">
+          <span class="meta-tag">PLATE 05 / 06</span>
+          <h3 class="meta-title">Highland Mist</h3>
+          <p class="meta-story">Rolling low-altitude morning clouds engulfing ancient volcanic ridges in the Western Ghats.</p>
+          <div class="exif-sheet">
+            <div class="exif-row"><span>CAMERA:</span> <strong>Canon EOS R5</strong></div>
+            <div class="exif-row"><span>LENS:</span> <strong>RF 70-200mm F2.8L</strong></div>
+            <div class="exif-row"><span>EXPOSURE:</span> <strong>1/320s at f/4.0</strong></div>
+            <div class="exif-row"><span>SENSITIVITY:</span> <strong>ISO 400</strong></div>
+            <div class="exif-row"><span>PRINT EDITION:</span> <strong>Limited to 15 Copies</strong></div>
+          </div>
+          <a href="#print-studio" class="modal-cta">Order Custom Print</a>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Modal 6 -->
+  <aside id="photo-modal-6" class="lightbox-view">
+    <a href="#gallery" class="lightbox-shade" aria-label="Close photo"></a>
+    <div class="lightbox-body">
+      <a href="#gallery" class="lightbox-close" aria-label="Close">&times;</a>
+      <div class="lightbox-content-grid">
+        <div class="lightbox-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1400&auto=format&fit=crop&q=95" alt="Natural Light Portrait">
+        </div>
+        <div class="lightbox-meta-panel">
+          <span class="meta-tag">PLATE 06 / 06</span>
+          <h3 class="meta-title">The Sculptor</h3>
+          <p class="meta-story">Environmental character study of an artisan stone mason in his Junagadh heritage workshop.</p>
+          <div class="exif-sheet">
+            <div class="exif-row"><span>CAMERA:</span> <strong>Fujifilm GFX 100 II</strong></div>
+            <div class="exif-row"><span>LENS:</span> <strong>GF 55mm F1.7 R WR</strong></div>
+            <div class="exif-row"><span>EXPOSURE:</span> <strong>1/160s at f/1.8</strong></div>
+            <div class="exif-row"><span>SENSITIVITY:</span> <strong>ISO 160</strong></div>
+            <div class="exif-row"><span>PRINT EDITION:</span> <strong>Limited to 12 Copies</strong></div>
+          </div>
+          <a href="#print-studio" class="modal-cta">Order Custom Print</a>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-layout">
+      <p>&copy; 2026 Lumina Studio • Curated & Coded by Deep Purohit</p>
+      <a href="#top" class="top-anchor">Return to Viewfinder ↑</a>
+    </div>
+  </footer>
+
+</body>
+</html>
